@@ -31,7 +31,7 @@ export default function FeaturedMovie({
                         {rating.toFixed(1)}/5.0
                     </span>
                 </div>
-            </div>
+            </div> 
             {/* bottom detail */}
             <div
                 className="absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px]

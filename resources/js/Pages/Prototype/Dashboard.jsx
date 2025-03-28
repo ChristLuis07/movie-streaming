@@ -36,7 +36,7 @@ export default function Dashboard() {
                             slug="the-batman-in-love"
                             name={`The Batman in Love${i}`}
                             category="Comedy"
-                            thumbnail="https://picsum.photos/id/1/300/300"
+                            thumbnail="/images/featured-1.png"
                             rating={i + 1}
                         />
                     ))}
@@ -53,7 +53,7 @@ export default function Dashboard() {
                             slug="the-batman-in-love"
                             name={`The Batman in Love${i}`}
                             category="Comedy"
-                            thumbnail="https://picsum.photos/id/1/300/300"
+                            thumbnail="/images/featured-3.png"
                         />
                     ))}
                 </Flickity>

@@ -48,7 +48,7 @@ export default function Topbar() {
             </div>
             <div className="flex items-center gap-4">
                 <span className="text-black text-sm font-medium">
-                    Welcome, Granola Sky
+                    Welcome, admin chris
                 </span>
                 <div className="collapsible-dropdown flex flex-col gap-2 relative">
                     <div

@@ -1,3 +1,5 @@
+import { Link } from "@inertiajs/react";
+
 export default function Sidebar() {
     return (
         <aside className="fixed z-50 w-[300px] h-full bg-white">
@@ -106,8 +108,8 @@ export default function Sidebar() {
                             Others
                         </div>
                         <div className="flex flex-col space-y-4">
-                            <a
-                                href="pricing.html"
+                            <Link
+                                href={route('prototype.subscriptionPlan')}
                                 className="flex items-center text-gray-500"
                             >
                                 <div className="w-6 h-6 mr-3 flex items-center justify-center">
@@ -126,7 +128,7 @@ export default function Sidebar() {
                                     </svg>
                                 </div>
                                 <span>Payments</span>
-                            </a>
+                            </Link>
 
                             <a
                                 href="#!"
@@ -195,20 +197,20 @@ export default function Sidebar() {
                             </a>
                         </div>
                     </div>
-                    <div class="mt-auto pr-[30px]">
-                        <div class="p-5 bg-black rounded-[25px]">
+                    <div className="mt-auto pr-[30px]">
+                        <div className="p-5 bg-black rounded-[25px]">
                             <img
                                 src="/icons/ic_star-rounded.svg"
                                 alt=""
                             />
-                            <div class="text-white text-lg font-semibold mt-4 mb-8">
+                            <div className="text-white text-lg font-semibold mt-4 mb-8">
                                 For Greatest
                             </div>
-                            <div class="text-white text-sm mb-2">
+                            <div className="text-white text-sm mb-2">
                                 12 of 30 hari
                             </div>
-                            <div class="rounded-full w-full h-[6px] bg-[#333333]">
-                                <div class="rounded-full h-full w-9/12 bg-alerange"></div>
+                            <div className="rounded-full w-full h-[6px] bg-[#333333]">
+                                <div className="rounded-full h-full w-9/12 bg-alerange"></div>
                             </div>
                         </div>
                     </div>
