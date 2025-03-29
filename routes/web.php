@@ -27,7 +27,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::redirect('/', '/prototype/login');
+Route::redirect('/', '/login');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
