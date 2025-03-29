@@ -15,8 +15,8 @@ export default function Sidebar() {
                             Menu
                         </div>
                         <div className="flex flex-col space-y-4">
-                            <a
-                                href="/"
+                            <Link
+                                href={route('prototype.dashboard')}
                                 className="flex items-center text-orange-500 font-medium"
                             >
                                 <div className="w-6 h-6 mr-3 flex items-center justify-center">
@@ -32,7 +32,7 @@ export default function Sidebar() {
                                 </div>
                                 <span>Discover</span>
                                 <div className="w-1 h-6 bg-orange-500 ml-auto"></div>
-                            </a>
+                            </Link>
 
                             <a
                                 href="#!"
