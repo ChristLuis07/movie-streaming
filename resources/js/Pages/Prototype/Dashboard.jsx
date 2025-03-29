@@ -34,9 +34,9 @@ export default function Dashboard() {
                         <FeaturedMovie
                             key={i}
                             slug="the-batman-in-love"
-                            name={`The Batman in Love${i}`}
+                            name={`Cloudy with a Chance of Meatballs 2${i}`}
                             category="Comedy"
-                            thumbnail="/images/featured-1.png"
+                            thumbnail="/images/browse-2.png"
                             rating={i + 1}
                         />
                     ))}
@@ -51,7 +51,7 @@ export default function Dashboard() {
                         <MovieCard
                             key={i}
                             slug="the-batman-in-love"
-                            name={`The Batman in Love${i}`}
+                            name={` How to Train Your Dragon: The Hidden World (2019)${i}`}
                             category="Comedy"
                             thumbnail="/images/featured-3.png"
                         />
