@@ -14,35 +14,35 @@ class MovieTableSeeder extends Seeder
      */
     public function run()
     {
-        $movies = [
-            [
-                'name' => 'The Shawshank Redemption',
-                'slug' => 'the-shawshank-redemption',
-                'category' => 'Drama',
-                'video_url' => 'https://www.youtube.com/watch?v=NmzuHjWmXOc',
-                'thumbnail' => 'https://www.themoviedb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
-                'rating' => 9.3,
-                'is_featured' => true,
-            ],
-            [
-                'name' => 'The Godfather',
-                'slug' => 'the-godfather',
-                'category' => 'Crime',
-                'video_url' => 'https://www.youtube.com/watch?v=sY1S34973zA',
-                'thumbnail' => 'https://www.themoviedb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',
-                'rating' => 9.2,
-                'is_featured' => true,
-            ],
-            [
-                'name' => 'The Dark Knight',
-                'slug' => 'the-dark-knight',
-                'category' => 'Action',
-                'video_url' => 'https://www.youtube.com/watch?v=EXeTwQWrcwY',
-                'thumbnail' => 'https://www.themoviedb.org/t/p/original/qJ2tWtm7pwN3LhQHcLhRcGxGpP.jpg',
-                'rating' => 9.0,
-                'is_featured' => true,
-            ],
-        ];
+       $movies = [
+    [
+        'name' => 'Inception',
+        'slug' => 'inception',
+        'category' => 'Sci-Fi',
+        'video_url' => 'https://www.youtube.com/watch?v=YoHD9XEInc0',
+        'thumbnail' => 'https://www.themoviedb.org/t/p/original/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg',
+        'rating' => 8.8,
+        'is_featured' => true,
+    ],
+    [
+        'name' => 'Interstellar',
+        'slug' => 'interstellar',
+        'category' => 'Sci-Fi',
+        'video_url' => 'https://www.youtube.com/watch?v=zSWdZVtXT7E',
+        'thumbnail' => 'https://www.themoviedb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+        'rating' => 8.7,
+        'is_featured' => true,
+    ],
+    [
+        'name' => 'Parasite',
+        'slug' => 'parasite',
+        'category' => 'Thriller',
+        'video_url' => 'https://www.youtube.com/watch?v=SEUXfv87Wpk',
+        'thumbnail' => 'https://www.themoviedb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg',
+        'rating' => 8.6,
+        'is_featured' => true,
+    ],
+];
         Movie::insert($movies);
     }
 }
