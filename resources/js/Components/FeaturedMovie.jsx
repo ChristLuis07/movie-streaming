@@ -29,7 +29,7 @@ export default function FeaturedMovie({
                 <div className="p-[30px] flex items-center gap-1">
                     <img src="/icons/ic_star.svg" alt="" />
                     <span className="text-sm font-medium text-white mt-1">
-                        {rating.toFixed(1)}/5.0
+                        {rating.toFixed(1)}/10
                     </span>
                 </div>
             </div>
@@ -51,7 +51,7 @@ export default function FeaturedMovie({
                 </div>
             </div>
             <Link
-                href={route("prototype.movie.show", slug)}
+                href={route("user.dashboard.movie.show", slug)}
                 className="inset-0 absolute z-50"
             ></Link>
         </div>
