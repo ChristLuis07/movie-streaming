@@ -82,11 +82,12 @@ export default function Sidebar({ auth }) {
 
                                 return (
                                     <MenuItem
-                                        key={`${index}-${menu.text}`}
+                                        key={`other-${index}-${menu.text}`}
                                         link={menu.link}
                                         icon={menu.icon}
                                         text={menu.text}
                                         isActive={isActive}
+                                        method={menu.method || "get"} 
                                     />
                                 );
                             })}

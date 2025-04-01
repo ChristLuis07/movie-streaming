@@ -1,18 +1,42 @@
 import { Link } from "@inertiajs/inertia-react";
+import { useForm } from "@inertiajs/inertia-react";
+
 export default function MenuItem({
     link,
     icon,
     text,
     isActive,
-    method = "get",
+    method="get",
 }) {
+    if (method === "post") {
+        const { post } = useForm();
+
+        const handleLogout = () => {
+            post(route(link));
+        };
+
+        return (
+            <button
+                onClick={handleLogout}
+                type="button"
+                className={`flex items-center w-full px-2 py-2 rounded-lg ${
+                    isActive
+                        ? "bg-primary text-white"
+                        : "text-gray-700 hover:bg-gray-100"
+                }`}
+            >
+                <span className="w-5 h-5 mr-3">{icon}</span>
+                <span>{text}</span>
+            </button>
+        );
+    }
+
     return (
         <Link
             href={link ? route(link) : null}
             className={`side-link flex items-center gap-3 px-2 py-2 rounded-md relative ${
                 isActive ? "active" : ""
             }`}
-            method={method}
             as="button"
         >
             {isActive && (
