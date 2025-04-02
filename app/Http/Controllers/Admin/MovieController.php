@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Movie\Store;
+use App\Http\Requests\Admin\Movie\Update;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -19,7 +20,10 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/Movie/Index');
+        $movies = Movie::all();
+        return Inertia::render('Admin/Movie/Index', [
+            'movies' => $movies,
+        ]);
     }
 
     /**
@@ -41,7 +45,7 @@ public function create()
     public function store(Store $request)
     {
         $data = $request->validated();
-        $data['thumbnail'] = Storage::disk('public')->put('movies', $request->file('thumbnail'));
+        $data['thumbnail'] = Storage::disk('public')->put('movies/', $request->file('thumbnail'));
         $data['slug'] = Str::slug($data['name']);
         $movie = Movie::create($data);
         
@@ -70,7 +74,9 @@ public function create()
      */
     public function edit(Movie $movie)
     {
-        //
+        return Inertia::render('Admin/Movie/Edit', [
+            'movie' => $movie
+        ]);
     }
 
     /**
@@ -80,9 +86,22 @@ public function create()
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Update $request, Movie $movie)
     {
-        //
+        $data = $request->validated();
+        if($request->file('thumbnail')) {
+            $data['thumbnail'] = Storage::disk('public')->put('movies/', $request->file('thumbnail'));
+            Storage::disk('public')->delete($movie->thumbnail);
+        } else {
+            $data['thumbnail'] = $movie->thumbnail;
+        }
+
+        $movie->update($data);
+
+        return redirect(route('admin.dashboard.movie.index'))->with([
+            'message' => 'Movie Updated Successfully',
+            'type' => 'success',
+        ]);
     }
 
     /**
